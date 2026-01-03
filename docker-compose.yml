@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres
+    restart: always
+    # Port mapping: YOUR_MAC:CONTAINER
+    # Your API connects to localhost:5432
+    # Docker routes that to the container's port 5432
+    ports:
+      - 5432:5432
+
+    # Environment variables configure the database
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: layla
+      POSTGRES_DB: financial_dashboard
